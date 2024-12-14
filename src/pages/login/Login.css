@@ -1,0 +1,217 @@
+/* Estilos para o Container */
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-color: #fbf8f4;
+  position: relative;
+}
+
+.container-imagem {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 62%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imagem-fundo {
+  background-image: url(src/assets/imagemPrincipal.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120%;
+  height: 125%;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.secao-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 38%;
+}
+
+.form-login {
+  margin-top: 10%;
+  height: 88vh;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título no Invólucro */
+.container h1 {
+  font-size: 55px;
+  color: #4b626c;
+  font-weight: 400;
+}
+
+/* Links na página */
+.links-adicionais {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: 5%;
+  margin-right: auto;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 1146px) {
+  .container {
+    background-size: contain;
+    background-image: none;
+  }
+  .container-imagem {
+    display: none;
+  }
+  .secao-login {
+    height: 100vh;
+    width: 100vw;
+  }
+  .links-adicionais {
+    align-items: center;
+    margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card-login {
+    margin-top: 50%;
+    height: 350px;
+    width: 90%;
+  }
+}
+
+/* Estilos para o Campo de Entrada */
+.campo-entrada {
+  color: #97a4a2;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 1vw;
+  font-size: 20px;
+  background: #efefef;
+  outline: none;
+  box-sizing: border-box;
+  margin-top: 5vh;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease-out;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.campo-entrada::placeholder {
+  color: #97a4a2;
+  transition: color 0.3s ease-out;
+}
+
+/* Efeito de zoom ao passar o mouse */
+.campo-entrada:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Placeholder muda de cor no hover */
+.campo-entrada:hover::placeholder {
+  color: #7a8b89;
+}
+
+/* Estado de foco mantém o zoom */
+.campo-entrada:focus {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  outline: 1.5px solid #97a4a2;
+}
+
+/* Estilos para novos elementos de erro */
+.container-entrada {
+  width: 100%;
+  position: relative;
+}
+
+.mensagem-erro {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+}
+
+.entrada-erro {
+  border: 2px solid #ff6b6b;
+}
+
+/* Estilos para o Botão de setinha */
+.botao-setinha {
+  margin-top: 10%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 40px;
+  border: none;
+  color: #4b626c;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-left: auto;
+  transition: all 0.3s ease;
+}
+
+.botao-setinha:hover {
+  transform: scale(1.1);
+  color: #3a4d54;
+}
+
+.botao-setinha:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Estilos para Links Personalizados */
+.links-adicionais {
+  color: #97a4a2;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link-autenticacao {
+  position: relative;
+  display: inline-block;
+  color: #97a4a2;
+  text-decoration: none;
+}
+
+.link-autenticacao::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #97a4a2;
+  transition: width 0.3s ease;
+}
+
+.link-autenticacao:hover {
+  color: #4b626c;
+}
+
+.link-autenticacao:hover::after {
+  width: 100%;
+}
