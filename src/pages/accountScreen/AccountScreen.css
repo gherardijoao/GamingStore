@@ -1,0 +1,367 @@
+/* Resets Globais*/
+:root {
+  --primary-bg-color: #fbf8f4;
+  --secondary-bg-color: #4b626c;
+  --text-color: #4b626c;
+  --light-text-color: #fbf6f0;
+  --input-bg-color: #97a4a273;
+}
+
+/* Container estilização */
+.containerACCOUNT {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagemMain {
+  width: 100px;
+  height: 80%;
+  background: url(../../assets/imagemLogo.png) no-repeat center/contain;
+}
+
+/* Layout Principal */
+.body {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  min-height: calc(100vh - 98px);
+  background: #fbf8f4;
+}
+
+/* Profile Seção */
+.profile-section {
+  background-color: var(--primary-bg-color);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-content {
+  max-width: 647px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boasVindas {
+  font-size: 40px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.about {
+  font-size: 25px;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+/* Button Estilização */
+.pfButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pfButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  color: var(--light-text-color);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 15px;
+  background-color: var(--secondary-bg-color);
+  transition: 0.5s;
+}
+
+.pfButtons:hover {
+  transform: scale(1.05);
+}
+
+.pfButtons:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Games Seção */
+.games-section {
+  background-color: var(--secondary-bg-color);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-left: 300px;
+}
+
+.games-content {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.games-content .joguinhosH1 {
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--light-text-color);
+  margin-bottom: 50px;
+}
+
+.joguinhos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 0px;
+  justify-items: center;
+}
+
+/* Game Cards */
+.Jogo1,
+.Jogo2,
+.Jogo3,
+.Jogo4 {
+  width: 190px;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: 0.5s;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Jogo1 {
+  background-image: url(../../assets/bobSponja.png);
+}
+.Jogo2 {
+  background-image: url(../../assets/deliverUsMars.png);
+}
+.Jogo3 {
+  background-image: url(../../assets/godOfWar.png);
+}
+.Jogo4 {
+  background-image: url(../../assets/deathStranding.png);
+}
+
+.Jogo1:hover,
+.Jogo2:hover,
+.Jogo3:hover,
+.Jogo4:hover {
+  transform: scale(1.1);
+}
+
+.avaliação {
+  color: var(--light-text-color);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cart-containerCONTA {
+  position: absolute;
+  right: 150px;
+  bottom: 160px;
+  width: 60px;
+  height: 60px;
+}
+
+.cart-iconCONTA {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cart-iconCONTA:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1366px) {
+  .games-section {
+    margin-left: 0;
+  }
+
+  .games-content {
+    width: 90%;
+  }
+}
+
+/* Estilos responsivos para telas menores */
+@media screen and (max-width: 1024px) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    overflow-y: auto;
+  }
+
+  .games-section {
+    margin-left: 0;
+    padding: 2rem;
+  }
+
+  .profile-section,
+  .games-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-content {
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .games-content {
+    width: 100%;
+  }
+
+  .joguinhos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-top: 60px;
+    overflow-x: hidden;
+  }
+
+  .body {
+    padding-bottom: 70px;
+  }
+
+  .profile-content,
+  .games-content {
+    width: 100%;
+  }
+
+  .boasVindas {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .about {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .pfButtonsContainer {
+    align-items: center;
+  }
+
+  .pfButtons {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .joguinhosH1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .joguinhos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .Jogo1,
+  .Jogo2,
+  .Jogo3,
+  .Jogo4 {
+    width: 160px;
+    height: 200px;
+  }
+
+  .avaliação {
+    font-size: 16px;
+  }
+
+  .Carrinho {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    z-index: 1000;
+  }
+
+  .cart-containerCONTA {
+    position: absolute;
+    right: -0px;
+    bottom: 350px;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .cart-iconCONTA {
+    width: 80%;
+    height: 80%;
+    filter: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile-section,
+  .games-section {
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .boasVindas {
+    font-size: 24px;
+  }
+
+  .about {
+    font-size: 16px;
+  }
+
+  .pfButtons {
+    width: 180px;
+    font-size: 14px;
+  }
+
+  .joguinhosH1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .joguinhos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .Jogo1,
+  .Jogo2,
+  .Jogo3,
+  .Jogo4 {
+    width: 100%;
+    max-width: 250px;
+    height: 180px;
+  }
+
+  .avaliação {
+    font-size: 14px;
+  }
+
+  .Carrinho {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.3em;
+  }
+}
