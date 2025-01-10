@@ -1,4 +1,4 @@
-/* Estilos para o Container */
+/* Container principal que define o layout da página */
 .container {
   height: 100vh;
   width: 100vw;
@@ -8,6 +8,7 @@
   position: relative;
 }
 
+/* Imagem de fundo na seção direita do layout */
 .container-imagem {
   position: absolute;
   top: 0;
@@ -18,6 +19,7 @@
   overflow: hidden;
 }
 
+/* Ajuste da imagem de fundo para centralização e responsividade */
 .imagem-fundo {
   background-image: url(src/assets/imagemPrincipal.png);
   background-size: contain;
@@ -31,6 +33,7 @@
   transform: translate(-50%, -50%);
 }
 
+/* Seção da página reservada para o formulário de login */
 .secao-login {
   display: flex;
   flex-direction: column;
@@ -39,6 +42,7 @@
   width: 38%;
 }
 
+/* Estilo do formulário de login */
 .form-login {
   margin-top: 10%;
   height: 88vh;
@@ -48,14 +52,14 @@
   align-items: center;
 }
 
-/* Título no Invólucro */
+/* Título estilizado dentro do container */
 .container h1 {
   font-size: 55px;
   color: #4b626c;
   font-weight: 400;
 }
 
-/* Links na página */
+/* Links adicionais posicionados na parte inferior do layout */
 .links-adicionais {
   display: flex;
   flex-direction: column;
@@ -64,34 +68,53 @@
   margin-right: auto;
 }
 
-/* Estilos responsivos */
+/* Estilos responsivos para telas menores */
+/* confesso que tive que ficar utilizando do !important pois do contrario as mudanças não estavando sendo efetuadas :( */
 @media screen and (max-width: 1146px) {
   .container {
-    background-size: contain;
-    background-image: none;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh !important;
   }
+
+  /* Modifica o comportamento da imagem para se adequar ao layout vertical */
   .container-imagem {
-    display: none;
+    position: relative !important;
+    width: 100% !important;
+    height: 35vh !important;
+    display: block !important;
+    order: -1 !important;
+    margin-top: -20px !important;
   }
-  .secao-login {
-    height: 100vh;
-    width: 100vw;
+
+  /* Ajusta o formulário de login para ocupar a largura total */
+  .form-login {
+    width: 100% !important;
+    max-width: 500px !important;
+    padding: 20px !important;
   }
+
+  /* Centraliza os links adicionais em telas menores */
   .links-adicionais {
-    align-items: center;
-    margin-right: 0%;
+    align-items: center !important;
+    margin: 20px auto !important;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .card-login {
-    margin-top: 50%;
-    height: 350px;
-    width: 90%;
+  /* Reduz o tamanho da imagem de fundo */
+  .container-imagem {
+    height: 30vh !important;
+    margin-top: -15px !important;
+  }
+
+  /* Ajusta o tamanho da fonte do título para telas muito pequenas */
+  .container h1 {
+    font-size: 40px !important;
   }
 }
 
-/* Estilos para o Campo de Entrada */
+/* Campo de entrada com bordas arredondadas e efeito de sombra */
 .campo-entrada {
   color: #97a4a2;
   width: 100%;
@@ -107,40 +130,9 @@
   font-family: "Montserrat", sans-serif;
   transition: all 0.3s ease-out;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1;
 }
 
-.campo-entrada::placeholder {
-  color: #97a4a2;
-  transition: color 0.3s ease-out;
-}
-
-/* Efeito de zoom ao passar o mouse */
-.campo-entrada:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-/* Placeholder muda de cor no hover */
-.campo-entrada:hover::placeholder {
-  color: #7a8b89;
-}
-
-/* Estado de foco mantém o zoom */
-.campo-entrada:focus {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
-  outline: 1.5px solid #97a4a2;
-}
-
-/* Estilos para novos elementos de erro */
-.container-entrada {
-  width: 100%;
-  position: relative;
-}
-
+/* Estilo para exibir mensagens de erro abaixo dos campos de entrada */
 .mensagem-erro {
   color: #ff6b6b;
   font-size: 14px;
@@ -149,11 +141,7 @@
   left: 0;
 }
 
-.entrada-erro {
-  border: 2px solid #ff6b6b;
-}
-
-/* Estilos para o Botão de setinha */
+/* Botão de ação com transição suave e escala no hover */
 .botao-setinha {
   margin-top: 10%;
   width: 100px;
@@ -167,7 +155,6 @@
   color: #4b626c;
   border-radius: 5px;
   background-color: transparent;
-  margin-left: auto;
   transition: all 0.3s ease;
 }
 
@@ -176,20 +163,7 @@
   color: #3a4d54;
 }
 
-.botao-setinha:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Estilos para Links Personalizados */
-.links-adicionais {
-  color: #97a4a2;
-  text-decoration: none;
-  font-weight: 700;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
+/* Estilos para links com sublinhado animado */
 .link-autenticacao {
   position: relative;
   display: inline-block;
