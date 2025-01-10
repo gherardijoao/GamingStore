@@ -137,12 +137,10 @@ function RegisterPage({ usuariosCadastrados, adicionarUsuario }) {
         // Adicionar usuário (presumindo que exista uma função para isso)
         adicionarUsuario(novoUsuario);
 
-        alert("Registro realizado com sucesso!");
         definirProcessando(false);
         direcionar("/login");
       }, 1000);
     } catch (erro) {
-      alert("Ocorreu um erro durante o registro: " + erro);
       definirProcessando(false);
     }
   };
