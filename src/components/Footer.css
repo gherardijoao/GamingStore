@@ -1,0 +1,278 @@
+/* Estilos Gerais do Footer */
+.footer {
+  background: #97a4a2;
+  color: #ffffff;
+  height: 160px;
+  padding: 10px;
+}
+
+/* Conteúdo do Footer */
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+}
+
+/* Estilos das seções do Footer*/
+.footer-section {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-section nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0px 0 7px 0;
+}
+
+.footer-section h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 16px;
+  margin: 5px 0px;
+}
+
+/* Seção de contato */
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.mail,
+.phone,
+.location {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mail {
+  background-image: url("../../assets/Mail.png");
+}
+
+.phone {
+  background-image: url("../../assets/Phone.png");
+}
+
+.location {
+  background-image: url("../../assets/Location.png");
+}
+
+/* Seção de Direitos */
+.direitos {
+  text-align: center;
+  height: 20%;
+}
+
+.direitos p {
+  font-size: 14px;
+  color: #4b626c;
+  margin-top: 12px;
+}
+
+/* Seção com o icon */
+.iconzin {
+  position: absolute;
+  transform: translateY(-50%);
+  height: 100px;
+  width: 100px;
+  left: -850px;
+  bottom: -40px;
+}
+
+.footer-section .textin {
+  margin-top: 0px;
+  text-align: center;
+  margin-left: 0px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer-section .iconzin img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.footer-section .iconzin img:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries */
+@media screen and (min-width: 1200px) {
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-section {
+    max-width: 250px;
+  }
+
+  .iconzin {
+    height: 80px;
+    width: 80px;
+    left: -50px;
+    bottom: -30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 20px 15px;
+    height: auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footer-section:nth-child(2),
+  .footer-section:first-child {
+    display: none;
+  }
+
+  .footer-section {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-section {
+    width: 100%;
+  }
+
+  .contact-section h3 {
+    display: none;
+  }
+
+  .contact-wrapper {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .iconzin {
+    position: static;
+    margin: 0;
+    transform: none;
+    height: 80px;
+    width: 80px;
+    left: auto;
+    bottom: auto;
+  }
+
+  .contact-item {
+    width: fit-content;
+    margin: 15px auto;
+    font-size: 14px;
+  }
+
+  .direitos {
+    margin-top: 15px;
+  }
+
+  .direitos p {
+    font-size: 13px;
+    color: #4b626c;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    padding: 15px 10px;
+  }
+
+  .iconzin {
+    height: 70px;
+    width: 70px;
+  }
+
+  .contact-wrapper {
+    gap: 20px;
+  }
+
+  .contact-item {
+    margin: 12px auto;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer {
+    padding: 12px 8px;
+  }
+
+  .iconzin {
+    height: 60px;
+    width: 60px;
+  }
+
+  .contact-item {
+    font-size: 12px;
+    padding-left: 30px;
+    margin: 10px auto;
+  }
+
+  .contact-wrapper {
+    gap: 15px;
+  }
+
+  .mail,
+  .phone,
+  .location {
+    width: 15px;
+    height: 15px;
+    left: 3px;
+  }
+
+  .direitos p {
+    font-size: 11px;
+  }
+}
