@@ -1,0 +1,384 @@
+/* 
+  Container principal da página inicial. 
+*/
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--primary-bg-color);
+  overflow: hidden;
+  position: fixed;
+}
+
+/* 
+  Área principal do conteúdo.
+  Utiliza flexbox para organizar elementos internos verticalmente.
+  É expansível para ocupar o espaço restante no layout flexível.
+*/
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 
+  Seção do carrossel principal. 
+  Responsável por exibir elementos de destaque em um carrossel centralizado.
+*/
+.main-carousel {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-bg-color);
+  padding: 40px;
+  min-height: 0;
+  width: 60%;
+  margin: 0px auto;
+}
+
+/* 
+  Contêiner do carrossel dentro da seção principal. 
+*/
+.main-carousel .carousel-container {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: -20px;
+}
+
+/* 
+  Carrossel secundário, com os "lançamentos"
+*/
+.secondary-carousel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--secondary-bg-color);
+  padding: 20px 250px;
+  z-index: 1;
+  margin-top: -40px;
+}
+
+/* 
+  Imagens dentro do carrossel secundário. 
+*/
+.secondary-carousel img {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* 
+  Título do carrossel secundário. 
+*/
+.secondary-carousel h2 {
+  margin-left: 100px;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: -10px;
+}
+
+/* 
+  Contêiner genérico de carrossel.
+*/
+.carousel-container {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  cards dos jogos e slides.
+*/
+.slide,
+.game-card {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  Imagens dentro dos slides do carrossel principal. 
+*/
+.main-carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* 
+  Imagens dentro dos cartões de jogos.
+*/
+.game-card img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin-top: 15px;
+}
+
+/* 
+  Efeito hover nos cartões de jogos. 
+*/
+.game-card:hover img {
+  transform: scale(1.03);
+}
+
+/* 
+  Botões de navegação do carrossel da biblioteca swiper. 
+  Personalizados para cores e efeitos ao passar o cursor.
+*/
+.swiper-button-prev,
+.swiper-button-next {
+  color: #97a4a2 !important;
+  transition: 0.5s !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.1) !important;
+}
+
+/* 
+  Indicadores de paginação do carrossel. 
+*/
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #97a4a25e !important;
+  opacity: 1 !important;
+  margin: 5px !important;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3), 0px 0px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 
+  Indicador ativo da paginação.
+*/
+.swiper-pagination-bullet-active {
+  background-color: #97a4a2 !important;
+}
+
+/* 
+  Seção de estilo do carrinho de compras. 
+*/
+.cart-container {
+  position: absolute;
+  right: 240px;
+  width: 60px;
+  height: 60px;
+  bottom: 170px;
+  z-index: 99;
+}
+
+/* 
+  Ícone do carrinho de compras.
+*/
+.cart-icon {
+  width: 80%;
+  height: 80%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* 
+  Efeito hover no ícone do carrinho. 
+*/
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 
+  Estilos Responsivos
+*/
+@media screen and (max-width: 1024px) {
+  .main-carousel {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .main-carousel .carousel-container {
+    width: 80%;
+  }
+
+  .secondary-carousel {
+    padding: 20px 100px;
+  }
+
+  .secondary-carousel h2 {
+    margin-left: 60px;
+    font-size: 24px;
+  }
+
+  /* Ajusta os slides */
+  .secondary-carousel .swiper-slide {
+    width: 33.33% !important;
+  }
+
+  .cart-container {
+    right: 100px;
+    bottom: 140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-carousel {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .main-carousel .carousel-container {
+    width: 90%;
+  }
+
+  .secondary-carousel {
+    padding: 15px 50px;
+  }
+
+  .secondary-carousel h2 {
+    margin-left: 30px;
+    font-size: 22px;
+  }
+
+  /*   /* Ajusta os slides novamente*/
+  .secondary-carousel .swiper-slide {
+    width: 50% !important;
+  }
+
+  .game-card img {
+    width: 70%;
+  }
+
+  .cart-container {
+    right: 50px;
+    bottom: 120px;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Ajusta botões de navegação */
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 30px !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* Estilização para Mobile */
+@media screen and (max-width: 480px) {
+  .home-container {
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    overflow-y: auto;
+  }
+
+  .main-carousel {
+    width: 100%;
+    margin-bottom: -50px;
+  }
+
+  .main-carousel .carousel-container {
+    width: 100%;
+    height: 240px;
+    margin-top: 0;
+  }
+
+  .main-carousel .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  .secondary-carousel {
+    padding-top: 60px;
+    margin-top: 80px;
+  }
+
+  .secondary-carousel h2 {
+    margin-left: 15px;
+    font-size: 20px;
+  }
+
+  /* Mostra apenas um slide por vez*/
+  .secondary-carousel .swiper-slide {
+    width: 100% !important;
+  }
+
+  .game-card img {
+    width: 190px;
+    height: 250px;
+  }
+
+  .cart-container {
+    right: 20px;
+    bottom: 240px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 24px !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    margin: 3px !important;
+  }
+}
+
+/* Landscape */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .home-container {
+    height: auto;
+  }
+
+  .main-carousel {
+    padding: 10px;
+  }
+
+  .main-carousel .carousel-container {
+    height: 200px;
+  }
+
+  .secondary-carousel {
+    padding: 10px 30px;
+  }
+
+  .secondary-carousel .swiper-slide {
+    width: 33.33% !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .secondary-carousel h2 {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  .cart-container {
+    right: 15px;
+    bottom: 90px;
+    width: 35px;
+    height: 35px;
+  }
+}
