@@ -59,9 +59,6 @@
 
 /* Estilos responsivos além dos do login */
 @media screen and (max-width: 1146px) {
-  .container-imagem {
-    display: none;
-  }
   .secao-login {
     width: 100vw;
   }
