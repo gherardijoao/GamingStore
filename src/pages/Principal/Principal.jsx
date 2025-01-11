@@ -55,16 +55,6 @@ const Principal = () => {
     { image: spellforce },
   ];
 
-  // Configuração de autoplay para o carrossel principal
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setMainCurrentSlide((prev) =>
-        prev === mainSlides.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [mainSlides.length]);
-
   return (
     <div className="home-container">
       <NavBar /> {/* Componente de navegação */}
