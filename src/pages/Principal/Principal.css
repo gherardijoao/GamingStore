@@ -16,7 +16,7 @@
   Utiliza flexbox para organizar elementos internos verticalmente.
   É expansível para ocupar o espaço restante no layout flexível.
 */
-.main-content {
+.main-contentPRINCIPAL {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -38,6 +38,7 @@
   min-height: 0;
   width: 60%;
   margin: 0px auto;
+  z-index: 0;
 }
 
 /* 
@@ -205,10 +206,12 @@
   .main-carousel {
     width: 90%;
     padding: 20px;
+    z-index: 0;
   }
 
   .main-carousel .carousel-container {
     width: 80%;
+    height: 80%;
   }
 
   .secondary-carousel {
@@ -285,7 +288,7 @@
     position: relative;
   }
 
-  .main-content {
+  .main-contentPRINCIPAL {
     overflow-y: auto;
   }
 

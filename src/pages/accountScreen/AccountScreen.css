@@ -1,4 +1,14 @@
 /* Resets Globais*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 :root {
   --primary-bg-color: #fbf8f4;
   --secondary-bg-color: #4b626c;
@@ -9,10 +19,11 @@
 
 /* Container estilização */
 .containerACCOUNT {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #fbf8f4;
 }
 
 .imagemMain {
@@ -191,6 +202,14 @@
   .games-content {
     width: 90%;
   }
+
+  .cart-containerCONTA {
+    position: absolute;
+    right: 50px;
+    bottom: 260px;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 /* Estilos responsivos para telas menores */
@@ -288,14 +307,6 @@
 
   .avaliação {
     font-size: 16px;
-  }
-
-  .Carrinho {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.5em;
-    z-index: 1000;
   }
 
   .cart-containerCONTA {

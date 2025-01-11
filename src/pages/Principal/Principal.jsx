@@ -68,7 +68,7 @@ const Principal = () => {
   return (
     <div className="home-container">
       <NavBar /> {/* Componente de navegação */}
-      <main className="main-content">
+      <main className="main-contentPRINCIPAL">
         {/* Carrossel principal */}
         <section className="main-carousel">
           <Swiper
